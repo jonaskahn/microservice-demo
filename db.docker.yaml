@@ -1,10 +1,27 @@
 version: '2'
 
 services:
-  mysql-master:
-    image: 'bitnami/mysql:latest'
+  usermanagenment:
+    image: 'bitnami/postgresql:latest'
     ports:
-      - 3306:3306
+      - 15432:5432
     environment:
-      - MYSQL_ROOT_PASSWORD=root
-      - MYSQL_DATABASE=profile
+      - POSTGRESQL_USERNAME=user
+      - POSTGRESQL_PASSWORD=user
+      - POSTGRESQL_DATABASE=user_db
+  productmanagenment:
+    image: 'bitnami/postgresql:latest'
+    ports:
+      - 15433:5432
+    environment:
+      - POSTGRESQL_USERNAME=product
+      - POSTGRESQL_PASSWORD=product
+      - POSTGRESQL_DATABASE=product_db
+  ordermanagenment:
+    image: 'bitnami/postgresql:latest'
+    ports:
+      - 15434:5432
+    environment:
+      - POSTGRESQL_USERNAME=order
+      - POSTGRESQL_PASSWORD=order
+      - POSTGRESQL_DATABASE=order_db
