@@ -10,12 +10,12 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: profilemanagement
+        - id: user-management
           predicates:
             - Path=/**
           filters:
-            - RewritePath=/profile, /
-          uri: lb://PROFILEMANAGEMENT
+            - RewritePath=/user, /
+          uri: lb://USER-MANAGEMENT
 
 logging:
   level:

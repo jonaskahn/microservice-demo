@@ -12,7 +12,7 @@ services:
   productmanagenment:
     image: 'bitnami/postgresql:latest'
     ports:
-      - 15433:5432
+      - 15434:5432
     environment:
       - POSTGRESQL_USERNAME=product
       - POSTGRESQL_PASSWORD=product
@@ -20,7 +20,7 @@ services:
   ordermanagenment:
     image: 'bitnami/postgresql:latest'
     ports:
-      - 15434:5432
+      - 15433:5432
     environment:
       - POSTGRESQL_USERNAME=order
       - POSTGRESQL_PASSWORD=order
