@@ -3,6 +3,7 @@ version: '2'
 services:
   usermanagenment:
     image: 'bitnami/postgresql:latest'
+    restart: unless-stopped
     ports:
       - 15432:5432
     environment:
@@ -11,6 +12,7 @@ services:
       - POSTGRESQL_DATABASE=user_db
   productmanagenment:
     image: 'bitnami/postgresql:latest'
+    restart: unless-stopped
     ports:
       - 15433:5432
     environment:
@@ -19,6 +21,7 @@ services:
       - POSTGRESQL_DATABASE=product_db
   ordermanagenment:
     image: 'bitnami/postgresql:latest'
+    restart: unless-stopped
     ports:
       - 15434:5432
     environment:

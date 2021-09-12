@@ -1,0 +1,11 @@
+version: '2'
+
+services:
+  stats:
+    image: bitnami/rabbitmq
+    restart: unless-stopped
+    environment:
+      - RABBITMQ_USERNAME=demo
+      - RABBITMQ_PASSWORD=demo
+    ports:
+      - 15672:15672

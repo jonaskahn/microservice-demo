@@ -12,10 +12,16 @@ spring:
       routes:
         - id: user-management
           predicates:
-            - Path=/**
-          filters:
-            - RewritePath=/user, /
+            - Path=/user/**
           uri: lb://USER-MANAGEMENT
+        - id: order-management
+          predicates:
+            - Path=/order/**
+          uri: lb://ORDER-MANAGEMENT
+        - id: product-management
+          predicates:
+            - Path=/product/**
+          uri: lb://PRODUCT-MANAGEMENT
 
 logging:
   level:
